@@ -28,6 +28,10 @@ class NightView: UIView {
         }
     }
     
+    /** The color of the stars. Defaults to white.
+    */
+    @IBInspectable var starColor = UIColor.whiteColor()
+    
     /** The minimum percent by which the stars' size will be changed. For example, a value of 50.0 means that the minimum size of a star will be 50% of the `starSize` property.
      Defaults to 50.0.
      - SeeAlso: `starSize`
@@ -54,11 +58,38 @@ class NightView: UIView {
         }
     }
     
+    /** The stars are drawn with a smaller opacity at the bottom of the view than at the top. This property sets the minimum opacity for the lower stars. Note that the stars at the top of the view will have an opacity of 1.0 .Defaults to 0.5.
+    */
     @IBInspectable var minStarOpacity: Float = 0.5 {
         didSet {
             // REDRAW
         }
     }
+    
+    /** The intensity of the glowing of the stars, from 0 to 1. If set to 0, the stars will not glow. Defaults to 0.5.
+    */
+    @IBInspectable var glowingIntensity = 0.5 {
+        didSet {
+            // REDRAW
+        }
+    }
+    
+    /** The duration in seconds at which the stars glow. Defaults to 1.0.
+    */
+    @IBInspectable var glowingDuration = 0.5 {
+        didSet {
+            // REDRAW
+        }
+    }
+    
+    enum starTypes {
+        case round
+    }
+    
+    
+    /** The type of stars to be drawn. Defaults to `.round`.
+    */
+    @IBInspectable var starType: starTypes = .round
     
     private let starLayer = CAShapeLayer()
     
@@ -91,14 +122,17 @@ class NightView: UIView {
         let numberOfStars = numberOfStarsForSize(bounds.size)
         
         for _ in 0...numberOfStars {
-            drawStarWithFrame(randomStarFrameInFrame(bounds), boundingFrame: bounds)
+            let layer = drawStarWithFrame(randomStarFrameInFrame(bounds), boundingFrame: bounds)
+            if glowingIntensity > 0.0 {
+                addGlowingAnimationToStar(layer)
+            }
         }
     }
     
-    private func drawStarWithFrame(frame: CGRect, boundingFrame: CGRect?) {
+    private func drawStarWithFrame(frame: CGRect, boundingFrame: CGRect?) -> CAShapeLayer {
         let layer = CAShapeLayer()
         layer.frame = frame
-        layer.fillColor = UIColor.whiteColor().CGColor
+        layer.fillColor = starColor.CGColor
         layer.path = UIBezierPath(ovalInRect: CGRectMake(0.0, 0.0, frame.width, frame.height)).CGPath
         layer.backgroundColor = UIColor.clearColor().CGColor
         
@@ -107,6 +141,19 @@ class NightView: UIView {
         }
         
         starLayer.addSublayer(layer)
+        return layer
+    }
+    
+    // MARK: Animations
+    
+    private func addGlowingAnimationToStar(layer: CAShapeLayer) {
+        let animation = CABasicAnimation(keyPath: "shadowOpacity")
+        animation.duration = glowingDuration
+        animation.fromValue = 1.0
+        animation.toValue = 0.0
+        animation.autoreverses = true
+        animation.repeatCount = 1000
+        layer.addAnimation(animation, forKey: "shadowOpacity")
     }
     
     // MARK: Generators
@@ -132,10 +179,6 @@ class NightView: UIView {
         let randomSize = starSize * randomStarSizeProduct
 
         return CGSize(width: randomSize, height: randomSize)
-    }
-
-    private func intensityForStarAtY(y: Float) -> Float {
-        return 1.0
     }
     
     private func numberOfStarsForSize(size: CGSize) -> Int {

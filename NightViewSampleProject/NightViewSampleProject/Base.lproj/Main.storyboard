@@ -20,30 +20,25 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLH-nA-1Hr" customClass="NightView" customModule="NightViewSampleProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NightView" translatesAutoresizingMaskIntoConstraints="NO" id="lye-O7-o3n">
-                                        <rect key="frame" x="100" y="238.5" width="400" height="123"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="400" id="1W4-K9-4Xg"/>
-                                            <constraint firstAttribute="width" secondItem="lye-O7-o3n" secondAttribute="height" multiplier="1000:307" id="l5U-VO-qcX"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lye-O7-o3n" secondAttribute="trailing" constant="20" id="EO4-3S-0C1"/>
-                                    <constraint firstItem="lye-O7-o3n" firstAttribute="centerX" secondItem="eLH-nA-1Hr" secondAttribute="centerX" id="Uf9-7T-v08"/>
-                                    <constraint firstItem="lye-O7-o3n" firstAttribute="centerY" secondItem="eLH-nA-1Hr" secondAttribute="centerY" id="pUf-BV-dZ1"/>
-                                    <constraint firstItem="lye-O7-o3n" firstAttribute="top" relation="greaterThanOrEqual" secondItem="eLH-nA-1Hr" secondAttribute="top" constant="20" id="t8d-cN-Ij5"/>
-                                    <constraint firstItem="lye-O7-o3n" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eLH-nA-1Hr" secondAttribute="leading" constant="20" id="ymV-zd-hAZ"/>
-                                </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="NightView" translatesAutoresizingMaskIntoConstraints="NO" id="lye-O7-o3n">
+                                <rect key="frame" x="100" y="239" width="400" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="400" id="1W4-K9-4Xg"/>
+                                    <constraint firstAttribute="width" secondItem="lye-O7-o3n" secondAttribute="height" multiplier="1000:307" id="l5U-VO-qcX"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lye-O7-o3n" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="8Jr-H2-bOe"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lye-O7-o3n" secondAttribute="trailing" constant="20" id="Ahg-ba-mtF"/>
                             <constraint firstItem="eLH-nA-1Hr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mkd-z4-fcM"/>
+                            <constraint firstItem="lye-O7-o3n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WoD-NZ-kaf"/>
                             <constraint firstAttribute="bottom" secondItem="eLH-nA-1Hr" secondAttribute="bottom" id="YUV-Bs-YCb"/>
                             <constraint firstItem="eLH-nA-1Hr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Yq2-i7-d9B"/>
+                            <constraint firstItem="lye-O7-o3n" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bK5-w3-E7i"/>
                             <constraint firstAttribute="trailing" secondItem="eLH-nA-1Hr" secondAttribute="trailing" id="foe-sd-ZJF"/>
                         </constraints>
                     </view>
