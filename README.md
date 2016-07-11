@@ -31,11 +31,13 @@ Learn more about the **NightView** project, licensing, support etc.
  - Requires Automatic Reference Counting (ARC).
  - Optimized for ARM64 Architecture.
 
- ### License
+### License
 See the [License](https://github.com/Boris-Em/NightView/blob/master/LICENSE). You are free to make changes and use this in either personal or commercial projects. Attribution is not required, but highly appreciated. A little "Thanks!" (or something to that affect) is always welcome. If you use **NightView** in your app, please let us know!
 
 ### Support
-[![https://gitter.im/Boris-Em/NightView](https://badges.gitter.im/Boris-Em/NightView.svg)](https://gitter.im/Boris-Em/NightView?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) Join us on gitter if you have any question!
+[![https://gitter.im/Boris-Em/NightView](https://badges.gitter.im/Boris-Em/NightView.svg)](https://gitter.im/Boris-Em/NightView?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  
+
+Join us on gitter if you have any question!
 
 ### Sample App
 The iOS Sample App included with this project demonstrates one way to correctly setup and use **NightView**. It also offers the possibility to customize the checkbox within the app.
