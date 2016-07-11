@@ -2,7 +2,7 @@
 
 <p align="center"><img src="https://s32.postimg.org/6w9jyums5/Night_View.jpg"/></p>	
 
-**NightView** is an open source library that generates beautiful, random starry skies on iOS.  
+**NightView** is an open source library that generates beautiful, random, starry skies on iOS.  
 
 ## Table of Contents
 
@@ -15,10 +15,6 @@
   * [Installation](#installation)
   * [Setup](#setup)
 * [**Documentation**](#documentation)
-  * [Enabling / Disabling the Checkbox](#enabling--disabling-the-checkbox) 
-  * [Reloading](#reloading)
-  * [Delegate] (#delegate)
-  * [Customization](#customization)
  
   
   ## Project Details
