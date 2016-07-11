@@ -119,6 +119,12 @@ class NightView: UIView {
         layer.addSublayer(starLayer)
     }
     
+    // MARK: Public Functions
+    
+    func reload() {
+        setNeedsDisplay()
+    }
+    
     // MARK: Drawings
     
     override func layoutSubviews() {
