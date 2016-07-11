@@ -84,6 +84,7 @@ class NightView: UIView {
     
     enum starTypes {
         case round
+        case fiveBranchStar
     }
     
     
@@ -133,7 +134,7 @@ class NightView: UIView {
         let layer = CAShapeLayer()
         layer.frame = frame
         layer.fillColor = starColor.CGColor
-        layer.path = UIBezierPath(ovalInRect: CGRectMake(0.0, 0.0, frame.width, frame.height)).CGPath
+        layer.path = pathForStarWithType(starType, frame: frame).CGPath
         layer.backgroundColor = UIColor.clearColor().CGColor
         
         if let boundingFrame = boundingFrame {
@@ -142,6 +143,32 @@ class NightView: UIView {
         
         starLayer.addSublayer(layer)
         return layer
+    }
+    
+    // MARK: Paths
+    
+    private func pathForStarWithType(starType: starTypes, frame: CGRect) -> UIBezierPath {
+        let width = frame.width
+        
+        switch starType {
+        case .fiveBranchStar:
+            let starPath = UIBezierPath()
+            starPath.moveToPoint(CGPoint(x: width / (1000 / 500), y: width / (1000 / 50)))
+            starPath.addLineToPoint(CGPoint(x: width / (1000 / 676.34), y: width / (1000 / 307.29)))
+            starPath.addLineToPoint(CGPoint(x: width / (1000 / 975.53), y: width / (1000 / 395.49)))
+            starPath.addLineToPoint(CGPoint(x: width / (1000 / 785.32), y: width / (1000 / 642.71)))
+            starPath.addLineToPoint(CGPoint(x: width / (1000 / 793.89), y: width / (1000 / 954.51)))
+            starPath.addLineToPoint(CGPoint(x: width / (1000 / 500), y: width / (1000 / 850)))
+            starPath.addLineToPoint(CGPoint(x: width / (1000 / 206.11), y: width / (1000 / 954.51)))
+            starPath.addLineToPoint(CGPoint(x: width / (1000 / 214.68), y: width / (1000 / 642.71)))
+            starPath.addLineToPoint(CGPoint(x: width / (1000 / 24.47), y: width / (1000 / 395.49)))
+            starPath.addLineToPoint(CGPoint(x: width / (1000 / 323.66), y: width / (1000 / 307.29)))
+            starPath.closePath()
+            return starPath
+            
+        default:
+            return UIBezierPath(ovalInRect: CGRectMake(0.0, 0.0, frame.width, frame.height))
+        }
     }
     
     // MARK: Animations
