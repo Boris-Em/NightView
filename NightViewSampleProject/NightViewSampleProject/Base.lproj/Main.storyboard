@@ -30,9 +30,10 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moto" translatesAutoresizingMaskIntoConstraints="NO" id="KMo-Zt-PN2" userLabel="Moto">
-                                <rect key="frame" x="20" y="548" width="560" height="32"/>
+                                <rect key="frame" x="36" y="550" width="528" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="KMo-Zt-PN2" secondAttribute="height" multiplier="1286:73" id="evp-oj-wOS"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="vcK-Ra-a58"/>
                                 </constraints>
                             </imageView>
                         </subviews>
