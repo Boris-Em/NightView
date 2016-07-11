@@ -8,26 +8,71 @@
 
 import UIKit
 
+@IBDesignable
 class NightView: UIView {
     
-    let areaToStarsRatio: CGFloat = 20000.0
+    /** The number of points for each star. For example, setting this property to 1, means that there will be 1 star for every point in the view. A greater number means less stars within the view.
+     Defaults to 10000.0.
+     */
+    @IBInspectable var numberOfPointsForStar: CGFloat = 10000.0 {
+        didSet {
+            // REDRAW
+        }
+    }
     
-    let sizeToStarSizeRatio: CGFloat = 100.0
-    let starSizeProductRandomizerRange = UInt32(50)...UInt32(150)
+    /** The size of the stars in points. Defaults to 5.0.
+    */
+    @IBInspectable var starSize: CGFloat = 5.0 {
+        didSet {
+            // REDRAW
+        }
+    }
     
-    let minStarOpacity: Float = 0.5
+    /** The minimum percent by which the stars' size will be changed. For example, a value of 50.0 means that the minimum size of a star will be 50% of the `starSize` property.
+     Defaults to 50.0.
+     - SeeAlso: `starSize`
+    */
+    @IBInspectable var starSizeMinRandomizer = 50.0 {
+        didSet {
+            starSizeProductRandomizerRange = UInt32(starSizeMinRandomizer)...UInt32(starSizeMaxRandomizer)
+        }
+    }
     
-    let starLayer = CAShapeLayer()
+    /** The maximum percent by which the stars' size will be changed. For example, a value of 150.0 means that the maximum size of a star will be 150% of the `starSize` property.
+     Defaults to 50.0.
+     - SeeAlso: `starSize`
+     */
+    @IBInspectable var starSizeMaxRandomizer = 150.0 {
+        didSet {
+            starSizeProductRandomizerRange = UInt32(starSizeMinRandomizer)...UInt32(starSizeMaxRandomizer)
+        }
+    }
+    
+    private var starSizeProductRandomizerRange = UInt32(50)...UInt32(150) {
+        didSet {
+            // REDRAW
+        }
+    }
+    
+    @IBInspectable var minStarOpacity: Float = 0.5 {
+        didSet {
+            // REDRAW
+        }
+    }
+    
+    private let starLayer = CAShapeLayer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        layer.addSublayer(starLayer)
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
+        commonInit()
+    }
+    
+    private func commonInit() {
         layer.addSublayer(starLayer)
     }
     
@@ -35,6 +80,7 @@ class NightView: UIView {
     
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
+        print("DRAW")
         starLayer.frame = bounds
         drawStars()
     }
@@ -66,7 +112,7 @@ class NightView: UIView {
     // MARK: Generators
     
     private func randomStarFrameInFrame(frame: CGRect) -> CGRect {
-        let size = randomStarSizeInSize(frame.size)
+        let size = randomStarSizeForSize(starSize)
         
         let minX = frame.origin.x
         let maxX = frame.origin.x + frame.size.width
@@ -81,11 +127,11 @@ class NightView: UIView {
         return starFrame
     }
     
-    private func randomStarSizeInSize(size: CGSize) -> CGSize {
-        let size = min(size.width, size.height)
+    private func randomStarSizeForSize(starSize: CGFloat) -> CGSize {
         let randomStarSizeProduct = CGFloat(arc4random_uniform(starSizeProductRandomizerRange.last! - starSizeProductRandomizerRange.first!) + starSizeProductRandomizerRange.first!) / 100.0;
+        let randomSize = starSize * randomStarSizeProduct
 
-        return CGSize(width: size / sizeToStarSizeRatio * randomStarSizeProduct, height: size / sizeToStarSizeRatio * randomStarSizeProduct)
+        return CGSize(width: randomSize, height: randomSize)
     }
 
     private func intensityForStarAtY(y: Float) -> Float {
@@ -95,7 +141,7 @@ class NightView: UIView {
     private func numberOfStarsForSize(size: CGSize) -> Int {
         let area = size.width * size.height
         
-        return Int(area / areaToStarsRatio)
+        return Int(area / numberOfPointsForStar)
     }
     
     private func removeSublayersFromLayer(layer: CAShapeLayer) {
@@ -105,5 +151,4 @@ class NightView: UIView {
             }
         }
     }
-    
 }
