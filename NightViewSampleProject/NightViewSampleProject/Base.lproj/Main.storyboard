@@ -29,17 +29,27 @@
                                     <constraint firstAttribute="width" secondItem="lye-O7-o3n" secondAttribute="height" multiplier="1000:307" id="l5U-VO-qcX"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Moto" translatesAutoresizingMaskIntoConstraints="NO" id="KMo-Zt-PN2" userLabel="Moto">
+                                <rect key="frame" x="20" y="548" width="560" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KMo-Zt-PN2" secondAttribute="height" multiplier="1286:73" id="evp-oj-wOS"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KMo-Zt-PN2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="30h-sr-QIy"/>
                             <constraint firstItem="lye-O7-o3n" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="8Jr-H2-bOe"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lye-O7-o3n" secondAttribute="trailing" constant="20" id="Ahg-ba-mtF"/>
                             <constraint firstItem="eLH-nA-1Hr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mkd-z4-fcM"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KMo-Zt-PN2" secondAttribute="trailing" constant="20" id="Uxa-Tk-c26"/>
                             <constraint firstItem="lye-O7-o3n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WoD-NZ-kaf"/>
                             <constraint firstAttribute="bottom" secondItem="eLH-nA-1Hr" secondAttribute="bottom" id="YUV-Bs-YCb"/>
                             <constraint firstItem="eLH-nA-1Hr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Yq2-i7-d9B"/>
                             <constraint firstItem="lye-O7-o3n" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bK5-w3-E7i"/>
                             <constraint firstAttribute="trailing" secondItem="eLH-nA-1Hr" secondAttribute="trailing" id="foe-sd-ZJF"/>
+                            <constraint firstItem="KMo-Zt-PN2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gEF-YG-rAt"/>
+                            <constraint firstAttribute="bottom" secondItem="KMo-Zt-PN2" secondAttribute="bottom" constant="20" id="pu4-EY-SPf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -51,6 +61,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Moto" width="1286" height="73"/>
         <image name="NightView" width="1000" height="307"/>
     </resources>
 </document>
