@@ -121,6 +121,11 @@ class NightView: UIView {
     
     // MARK: Drawings
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setNeedsDisplay()
+    }
+    
     override func drawRect(rect: CGRect) {
         print("DRAW")
         starLayer.frame = bounds
