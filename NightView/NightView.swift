@@ -18,7 +18,7 @@ class NightView: UIView {
      */
     @IBInspectable var numberOfPointsForStar: CGFloat = 10000.0 {
         didSet {
-            // REDRAW
+            setNeedsDisplay()
         }
     }
     
@@ -26,7 +26,7 @@ class NightView: UIView {
     */
     @IBInspectable var starSize: CGFloat = 5.0 {
         didSet {
-            // REDRAW
+            setNeedsDisplay()
         }
     }
     
@@ -56,7 +56,7 @@ class NightView: UIView {
     
     private var starSizeProductRandomizerRange = UInt32(50)...UInt32(150) {
         didSet {
-            // REDRAW
+            setNeedsDisplay()
         }
     }
     
@@ -64,7 +64,7 @@ class NightView: UIView {
     */
     @IBInspectable var minStarOpacity: Float = 0.5 {
         didSet {
-            // REDRAW
+            setNeedsDisplay()
         }
     }
     
@@ -72,7 +72,7 @@ class NightView: UIView {
     */
     @IBInspectable var glowingIntensity: Float = 0.5 {
         didSet {
-            // REDRAW
+            setNeedsDisplay()
         }
     }
     
@@ -80,7 +80,7 @@ class NightView: UIView {
     */
     @IBInspectable var glowingDuration = 2.0 {
         didSet {
-            // REDRAW
+            setNeedsDisplay()
         }
     }
     
