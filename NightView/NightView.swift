@@ -127,7 +127,6 @@ class NightView: UIView {
     }
     
     override func drawRect(rect: CGRect) {
-        print("DRAW")
         starLayer.frame = bounds
         drawStars()
     }
