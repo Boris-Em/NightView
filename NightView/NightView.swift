@@ -8,6 +8,8 @@
 
 import UIKit
 
+/** Dazzling Nights on iOS.
+*/
 @IBDesignable
 class NightView: UIView {
     
