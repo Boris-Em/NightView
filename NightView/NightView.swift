@@ -34,7 +34,7 @@ class NightView: UIView {
     */
     @IBInspectable var starColor = UIColor.whiteColor()
     
-    /** The minimum percent by which the stars' size will be changed. For example, a value of 50.0 means that the minimum size of a star will be 50% of the `starSize` property.
+    /** The minimum percent by which the stars' size could be changed. For example, a value of 50.0 means that the minimum size of a star will be 50% of the `starSize` property.
      Defaults to 50.0.
      - SeeAlso: `starSize`
     */
@@ -44,8 +44,8 @@ class NightView: UIView {
         }
     }
     
-    /** The maximum percent by which the stars' size will be changed. For example, a value of 150.0 means that the maximum size of a star will be 150% of the `starSize` property.
-     Defaults to 50.0.
+    /** The maximum percent by which the stars' size could be changed. For example, a value of 150.0 means that the maximum size of a star will be 150% of the `starSize` property.
+     Defaults to 150.0.
      - SeeAlso: `starSize`
      */
     @IBInspectable var starSizeMaxRandomizer = 150.0 {
@@ -60,7 +60,7 @@ class NightView: UIView {
         }
     }
     
-    /** The stars are drawn with a smaller opacity at the bottom of the view than at the top. This property sets the minimum opacity for the lower stars. Note that the stars at the top of the view will have an opacity of 1.0 .Defaults to 0.5.
+    /** The stars are drawn with a smaller opacity at the bottom of the view than at the top. This property sets the minimum opacity for the lower stars. Note that the stars at the top of the view will always have an opacity of 1.0 .Defaults to 0.5.
     */
     @IBInspectable var minStarOpacity: Float = 0.5 {
         didSet {
@@ -84,8 +84,15 @@ class NightView: UIView {
         }
     }
     
+    /** Type of stars.
+    */
     enum starTypes {
+        /** Round stars.
+         */
         case round
+        
+        /** Smooth star with 5 branches.
+        */
         case fiveBranchStar
     }
     
@@ -95,6 +102,8 @@ class NightView: UIView {
     @IBInspectable var starType: starTypes = .round
     
     private let starLayer = CAShapeLayer()
+    
+    // MARK: Initializers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
