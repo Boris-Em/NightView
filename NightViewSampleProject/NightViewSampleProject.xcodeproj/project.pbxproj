@@ -13,6 +13,7 @@
 		C31E420E1D333B5C00A4A7A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C31E420D1D333B5C00A4A7A4 /* Assets.xcassets */; };
 		C31E42111D333B5C00A4A7A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31E420F1D333B5C00A4A7A4 /* LaunchScreen.storyboard */; };
 		C31E421C1D333B5C00A4A7A4 /* NightViewSampleProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31E421B1D333B5C00A4A7A4 /* NightViewSampleProjectTests.swift */; };
+		C31E42281D333BBB00A4A7A4 /* NightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31E42271D333BBB00A4A7A4 /* NightView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		C31E42171D333B5C00A4A7A4 /* NightViewSampleProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NightViewSampleProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C31E421B1D333B5C00A4A7A4 /* NightViewSampleProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightViewSampleProjectTests.swift; sourceTree = "<group>"; };
 		C31E421D1D333B5C00A4A7A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C31E42271D333BBB00A4A7A4 /* NightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		C31E41FA1D333B5C00A4A7A4 = {
 			isa = PBXGroup;
 			children = (
+				C31E42261D333BBB00A4A7A4 /* NightView */,
 				C31E42051D333B5C00A4A7A4 /* NightViewSampleProject */,
 				C31E421A1D333B5C00A4A7A4 /* NightViewSampleProjectTests */,
 				C31E42041D333B5C00A4A7A4 /* Products */,
@@ -94,6 +97,15 @@
 				C31E421D1D333B5C00A4A7A4 /* Info.plist */,
 			);
 			path = NightViewSampleProjectTests;
+			sourceTree = "<group>";
+		};
+		C31E42261D333BBB00A4A7A4 /* NightView */ = {
+			isa = PBXGroup;
+			children = (
+				C31E42271D333BBB00A4A7A4 /* NightView.swift */,
+			);
+			name = NightView;
+			path = ../NightView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C31E42091D333B5C00A4A7A4 /* ViewController.swift in Sources */,
+				C31E42281D333BBB00A4A7A4 /* NightView.swift in Sources */,
 				C31E42071D333B5C00A4A7A4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
