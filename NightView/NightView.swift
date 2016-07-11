@@ -68,15 +68,15 @@ class NightView: UIView {
     
     /** The intensity of the glowing of the stars, from 0 to 1. If set to 0, the stars will not glow. Defaults to 0.5.
     */
-    @IBInspectable var glowingIntensity = 0.5 {
+    @IBInspectable var glowingIntensity: Float = 0.5 {
         didSet {
             // REDRAW
         }
     }
     
-    /** The duration in seconds at which the stars glow. Defaults to 1.0.
+    /** The duration in seconds at which the stars glow. Defaults to 2.0.
     */
-    @IBInspectable var glowingDuration = 0.5 {
+    @IBInspectable var glowingDuration = 2.0 {
         didSet {
             // REDRAW
         }
@@ -147,13 +147,14 @@ class NightView: UIView {
     // MARK: Animations
     
     private func addGlowingAnimationToStar(layer: CAShapeLayer) {
-        let animation = CABasicAnimation(keyPath: "shadowOpacity")
+        let animation = CABasicAnimation(keyPath: "opacity")
         animation.duration = glowingDuration
-        animation.fromValue = 1.0
-        animation.toValue = 0.0
+        animation.fromValue = layer.opacity
+        animation.beginTime = CACurrentMediaTime() + Double(arc4random_uniform(UInt32(glowingDuration) * 1000)) / 1000
+        animation.toValue = NSNumber(float: layer.opacity - layer.opacity * glowingIntensity)
         animation.autoreverses = true
-        animation.repeatCount = 1000
-        layer.addAnimation(animation, forKey: "shadowOpacity")
+        animation.repeatCount = .infinity
+        layer.addAnimation(animation, forKey: "opacity")
     }
     
     // MARK: Generators
