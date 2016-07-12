@@ -33,6 +33,8 @@ class CustomizationTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Customization"
+        
         if let numberOfPointsForStar = nightView?.numberOfPointsForStar {
             numberOfPointsForStarLabel.text = String(format: "%.1f", numberOfPointsForStar)
             numberOfPointsForStarSlider.value = Float(numberOfPointsForStar)
