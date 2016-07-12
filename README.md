@@ -96,6 +96,7 @@ The duration in seconds at which the stars glow. *Defaults to 2.0.*
 
 ##### `starType`  
 The type of stars to be drawn. *Defaults to `.round`.*  
+<p align="center"><img src="https://s32.postimg.org/5lqa389lh/Night_View_Stars.jpg"/>
 
 ##### `reload()`  
 Reloads the **NightView** instance, redrawing all of the stars.
