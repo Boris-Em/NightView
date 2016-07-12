@@ -143,8 +143,7 @@ class NightView: UIView {
         removeSublayersFromLayer(starLayer)
         
         let numberOfStars = numberOfStarsForSize(bounds.size)
-        
-        for _ in 0...numberOfStars {
+        for _ in 0..<numberOfStars {
             let layer = drawStarWithFrame(randomStarFrameInFrame(bounds), boundingFrame: bounds)
             if glowingIntensity > 0.0 {
                 addGlowingAnimationToStar(layer)
