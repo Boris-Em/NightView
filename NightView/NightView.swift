@@ -18,7 +18,7 @@ class NightView: UIView {
      */
     @IBInspectable var numberOfPointsForStar: CGFloat = 10000.0 {
         didSet {
-            setNeedsDisplay()
+            reload()
         }
     }
     
@@ -26,7 +26,7 @@ class NightView: UIView {
     */
     @IBInspectable var starSize: CGFloat = 5.0 {
         didSet {
-            setNeedsDisplay()
+            reload()
         }
     }
     
@@ -56,7 +56,7 @@ class NightView: UIView {
     
     private var starSizeProductRandomizerRange = UInt32(50)...UInt32(150) {
         didSet {
-            setNeedsDisplay()
+            reload()
         }
     }
     
@@ -64,7 +64,7 @@ class NightView: UIView {
     */
     @IBInspectable var minStarOpacity: Float = 0.5 {
         didSet {
-            setNeedsDisplay()
+            reload()
         }
     }
     
@@ -72,7 +72,7 @@ class NightView: UIView {
     */
     @IBInspectable var glowingIntensity: Float = 0.5 {
         didSet {
-            setNeedsDisplay()
+            reload()
         }
     }
     
@@ -80,7 +80,7 @@ class NightView: UIView {
     */
     @IBInspectable var glowingDuration = 2.0 {
         didSet {
-            setNeedsDisplay()
+            reload()
         }
     }
     
@@ -95,7 +95,6 @@ class NightView: UIView {
         */
         case fiveBranchStar
     }
-    
     
     /** The type of stars to be drawn. Defaults to `.round`.
     */
@@ -123,13 +122,14 @@ class NightView: UIView {
     
     func reload() {
         setNeedsDisplay()
+        layer.displayIfNeeded()
     }
     
     // MARK: Drawings
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setNeedsDisplay()
+        reload()
     }
     
     override func drawRect(rect: CGRect) {
