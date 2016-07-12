@@ -40,5 +40,62 @@ See the [License](https://github.com/Boris-Em/NightView/blob/master/LICENSE). Yo
 Join us on gitter if you have any question!
 
 ### Sample App
-The iOS Sample App included with this project demonstrates one way to correctly setup and use **NightView**. It also offers the possibility to customize the checkbox within the app.
+The iOS Sample App included with this project demonstrates one way to correctly setup and use **NightView**. It also offers the possibility to customize the view within the app.
 
+## Getting Started
+It only takes a few simple steps to install and setup **BEMCheckBox** to your project.
+
+###Installation
+The easiest way to install **NightView** is to use <a href="http://cocoapods.org/" target="_blank">CocoaPods</a>. To do so, simply add the following line to your `Podfile`:
+	<pre><code>pod 'NightView'</code></pre>
+	
+The other way to install **NightView**, is to drag and drop the *NightView* folder into your Xcode project. When you do so, make sure to check the "*Copy items into destination group's folder*" box.
+
+### Setup
+**NightView** is a simple UIView subclass. It can be initialized with Interface Builder, or programatically.
+ 
+ **Interface Builder Initialization**  
+ 1 - Drag a `UIView` to your `UIViewController`.  
+ 2 - Change the class of the new `UIView` to `NightView`.  
+ 3 - Select the `NightView` and open the Attributes Inspector. Most of the customizable properties can easily be set from the Attributes Inspector. The Sample App demonstrates this capability.
+ 
+ **Programmatical Initialization**  
+ Here is an example illustrating how to initialize a NightView instance programmatically:
+
+ ```swift
+ let nightView = NightView(frame: CGRectMake(0.0, 0.0, 200.0, 200.0))
+ view.addSubview(nightView)
+ ```
+ 
+## Documentation
+All of the methods and properties available for **NightView** are documented below.
+
+##### `numberOfPointsForStar`  
+The number of points for each star. For example, setting this property to 1, means that there will be 1 star for every point in the view. A greater number means less stars within the view. *Defaults to 10000.0.*
+
+##### `starSize`  
+The size of the stars in points. Note that setting `starSizeMinRandomizer` and `starSizeMaxRandomizer` will also influence the size of stars. *Defaults to 5.0.*
+
+##### `starColor`  
+The color of the stars. *Defaults to white.*
+
+##### `starSizeMinRandomizer`  
+The size of the stars is randomized within the `starSize` value. This property sets the minimum percent by which the stars' size could be changed. For example, a value of 50.0 means that the minimum size of a star will be 50% of the `starSize` property. *Defaults to 50.0.*
+
+##### `starSizeMaxRandomizer`  
+The size of the stars is randomized within the `starSize` value. This property sets the maximum percent by which the stars' size could be changed. For example, a value of 150.0 means that the maximum size of a star will be 150% of the `starSize` property. *Defaults to 150.0.*  
+
+##### `minStarOpacity`  
+The stars are drawn with a smaller opacity at the bottom of the view than at the top. This property sets the minimum opacity for the lower stars. Note that the stars at the top of the view will always have an opacity of 1.0. *Defaults to 0.5.*
+
+##### `glowingIntensity`  
+The intensity of the glowing of the stars, from 0 to 1. If set to 0, the stars will not glow. *Defaults to 0.5.*
+
+##### `glowingDuration`  
+The duration in seconds at which the stars glow. *Defaults to 2.0.*
+
+##### `starType`  
+The type of stars to be drawn. *Defaults to `.round`.*  
+
+##### `reload()`  
+Reloads the **NightView** instance, redrawing all of the stars.
