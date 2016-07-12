@@ -40,7 +40,8 @@ class NightView: UIView {
     */
     @IBInspectable var starSizeMinRandomizer = 50.0 {
         didSet {
-            starSizeProductRandomizerRange = UInt32(starSizeMinRandomizer)...UInt32(starSizeMaxRandomizer)
+            let max = starSizeMaxRandomizer < starSizeMinRandomizer ? starSizeMinRandomizer + 1 : starSizeMaxRandomizer
+            starSizeProductRandomizerRange = UInt32(starSizeMinRandomizer)...UInt32(max)
         }
     }
     
@@ -50,7 +51,8 @@ class NightView: UIView {
      */
     @IBInspectable var starSizeMaxRandomizer = 150.0 {
         didSet {
-            starSizeProductRandomizerRange = UInt32(starSizeMinRandomizer)...UInt32(starSizeMaxRandomizer)
+            let min = starSizeMinRandomizer > starSizeMaxRandomizer ? starSizeMaxRandomizer - 1 : starSizeMinRandomizer
+            starSizeProductRandomizerRange = UInt32(min)...UInt32(starSizeMaxRandomizer)
         }
     }
     
