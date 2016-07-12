@@ -100,7 +100,11 @@ class NightView: UIView {
     
     /** The type of stars to be drawn. Defaults to `.round`.
     */
-    @IBInspectable var starType: starTypes = .round
+    @IBInspectable var starType: starTypes = .round {
+        didSet {
+            reload()
+        }
+    }
     
     private let starLayer = CAShapeLayer()
     
