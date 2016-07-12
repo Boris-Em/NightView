@@ -14,6 +14,7 @@
 		C31E42111D333B5C00A4A7A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31E420F1D333B5C00A4A7A4 /* LaunchScreen.storyboard */; };
 		C31E42281D333BBB00A4A7A4 /* NightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31E42271D333BBB00A4A7A4 /* NightView.swift */; };
 		C3B4E3891D34020A0089FC02 /* NightViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B4E3881D34020A0089FC02 /* NightViewTests.swift */; };
+		C3B4E38B1D34CC240089FC02 /* CustomizationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B4E38A1D34CC240089FC02 /* CustomizationTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		C31E421D1D333B5C00A4A7A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C31E42271D333BBB00A4A7A4 /* NightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightView.swift; sourceTree = "<group>"; };
 		C3B4E3881D34020A0089FC02 /* NightViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightViewTests.swift; sourceTree = "<group>"; };
+		C3B4E38A1D34CC240089FC02 /* CustomizationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizationTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				C31E42061D333B5C00A4A7A4 /* AppDelegate.swift */,
 				C31E42081D333B5C00A4A7A4 /* ViewController.swift */,
+				C3B4E38A1D34CC240089FC02 /* CustomizationTableViewController.swift */,
 				C31E420A1D333B5C00A4A7A4 /* Main.storyboard */,
 				C31E420D1D333B5C00A4A7A4 /* Assets.xcassets */,
 				C31E420F1D333B5C00A4A7A4 /* LaunchScreen.storyboard */,
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C31E42091D333B5C00A4A7A4 /* ViewController.swift in Sources */,
+				C3B4E38B1D34CC240089FC02 /* CustomizationTableViewController.swift in Sources */,
 				C31E42281D333BBB00A4A7A4 /* NightView.swift in Sources */,
 				C31E42071D333B5C00A4A7A4 /* AppDelegate.swift in Sources */,
 			);
