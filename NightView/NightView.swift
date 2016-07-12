@@ -62,7 +62,7 @@ class NightView: UIView {
         }
     }
     
-    /** The stars are drawn with a smaller opacity at the bottom of the view than at the top. This property sets the minimum opacity for the lower stars. Note that the stars at the top of the view will always have an opacity of 1.0 .Defaults to 0.5.
+    /** The stars are drawn with a smaller opacity at the bottom of the view than at the top. This property sets the minimum opacity for the lower stars. Note that the stars at the top of the view will always have an opacity of 1.0. Defaults to 0.5.
     */
     @IBInspectable var minStarOpacity: Float = 0.5 {
         didSet {
@@ -122,6 +122,8 @@ class NightView: UIView {
     
     // MARK: Public Functions
     
+    /** Reloads the NightView instance, redrawing all of the stars.
+    */
     func reload() {
         setNeedsDisplay()
         layer.displayIfNeeded()
