@@ -11,12 +11,12 @@ import UIKit
 /** Dazzling Nights on iOS.
 */
 @IBDesignable
-class NightView: UIView {
+public class NightView: UIView {
     
     /** The number of points for each star. For example, setting this property to 1, means that there will be 1 star for every point in the view. A greater number means less stars within the view.
      Defaults to 10000.0.
      */
-    @IBInspectable var numberOfPointsForStar: CGFloat = 10000.0 {
+    @IBInspectable public var numberOfPointsForStar: CGFloat = 10000.0 {
         didSet {
             reload()
         }
@@ -24,7 +24,7 @@ class NightView: UIView {
     
     /** The size of the stars in points. Defaults to 5.0.
     */
-    @IBInspectable var starSize: CGFloat = 5.0 {
+    @IBInspectable public var starSize: CGFloat = 5.0 {
         didSet {
             reload()
         }
@@ -32,13 +32,13 @@ class NightView: UIView {
     
     /** The color of the stars. Defaults to white.
     */
-    @IBInspectable var starColor = UIColor.whiteColor()
+    @IBInspectable public var starColor = UIColor.whiteColor()
     
     /** The minimum percent by which the stars' size could be changed. For example, a value of 50.0 means that the minimum size of a star will be 50% of the `starSize` property.
      Defaults to 50.0.
      - SeeAlso: `starSize`
     */
-    @IBInspectable var starSizeMinRandomizer = 50.0 {
+    @IBInspectable public var starSizeMinRandomizer = 50.0 {
         didSet {
             let max = starSizeMaxRandomizer < starSizeMinRandomizer ? starSizeMinRandomizer + 1 : starSizeMaxRandomizer
             starSizeProductRandomizerRange = UInt32(starSizeMinRandomizer)...UInt32(max)
@@ -49,7 +49,7 @@ class NightView: UIView {
      Defaults to 150.0.
      - SeeAlso: `starSize`
      */
-    @IBInspectable var starSizeMaxRandomizer = 150.0 {
+    @IBInspectable public var starSizeMaxRandomizer = 150.0 {
         didSet {
             let min = starSizeMinRandomizer > starSizeMaxRandomizer ? starSizeMaxRandomizer - 1 : starSizeMinRandomizer
             starSizeProductRandomizerRange = UInt32(min)...UInt32(starSizeMaxRandomizer)
@@ -64,7 +64,7 @@ class NightView: UIView {
     
     /** The stars are drawn with a smaller opacity at the bottom of the view than at the top. This property sets the minimum opacity for the lower stars. Note that the stars at the top of the view will always have an opacity of 1.0. Defaults to 0.5.
     */
-    @IBInspectable var minStarOpacity: Float = 0.5 {
+    @IBInspectable public var minStarOpacity: Float = 0.5 {
         didSet {
             reload()
         }
@@ -72,7 +72,7 @@ class NightView: UIView {
     
     /** The intensity of the glowing of the stars, from 0 to 1. If set to 0, the stars will not glow. Defaults to 0.5.
     */
-    @IBInspectable var glowingIntensity: Float = 0.5 {
+    @IBInspectable public var glowingIntensity: Float = 0.5 {
         didSet {
             reload()
         }
@@ -80,7 +80,7 @@ class NightView: UIView {
     
     /** The duration in seconds at which the stars glow. Defaults to 2.0.
     */
-    @IBInspectable var glowingDuration = 2.0 {
+    @IBInspectable public var glowingDuration = 2.0 {
         didSet {
             reload()
         }
@@ -88,19 +88,19 @@ class NightView: UIView {
     
     /** Type of stars.
     */
-    enum starTypes {
+    public enum starTypes {
         /** Round stars.
          */
-        case round
+        case Round
         
         /** Smooth star with 5 branches.
         */
-        case fiveBranchStar
+        case FiveBranchStar
     }
     
-    /** The type of stars to be drawn. Defaults to `.round`.
+    /** The type of stars to be drawn. Defaults to `.Round`.
     */
-    @IBInspectable var starType: starTypes = .round {
+    @IBInspectable public var starType: starTypes = .Round {
         didSet {
             reload()
         }
@@ -110,12 +110,12 @@ class NightView: UIView {
     
     // MARK: Initializers
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
@@ -128,19 +128,19 @@ class NightView: UIView {
     
     /** Reloads the NightView instance, redrawing all of the stars.
     */
-    func reload() {
+    public func reload() {
         setNeedsDisplay()
         layer.displayIfNeeded()
     }
     
     // MARK: Drawings
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         reload()
     }
     
-    override func drawRect(rect: CGRect) {
+    override public func drawRect(rect: CGRect) {
         starLayer.frame = bounds
         drawStars()
     }
@@ -178,7 +178,7 @@ class NightView: UIView {
         let width = frame.width
         
         switch starType {
-        case .fiveBranchStar:
+        case .FiveBranchStar:
             let starPath = UIBezierPath()
             starPath.moveToPoint(CGPoint(x: width / (1000 / 500), y: width / (1000 / 50)))
             starPath.addLineToPoint(CGPoint(x: width / (1000 / 676.34), y: width / (1000 / 307.29)))
