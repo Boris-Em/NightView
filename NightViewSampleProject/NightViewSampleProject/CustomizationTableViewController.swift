@@ -70,10 +70,10 @@ class CustomizationTableViewController: UITableViewController {
         
         if let starType = nightView?.starType {
             switch starType {
-            case .round:
+            case .Round:
                 starTypeSegmentedControl.selectedSegmentIndex = 0
                 break
-            case .fiveBranchStar:
+            case .FiveBranchStar:
                 starTypeSegmentedControl.selectedSegmentIndex = 1
                 break
             }
@@ -126,10 +126,10 @@ class CustomizationTableViewController: UITableViewController {
     @IBAction func handleStarTypeSegmentedControl(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            nightView?.starType = .round
+            nightView?.starType = .Round
             break
         default:
-            nightView?.starType = .fiveBranchStar
+            nightView?.starType = .FiveBranchStar
             break
         }
     }
