@@ -43,7 +43,7 @@ Join us on gitter if you have any question!
 The iOS Sample App included with this project demonstrates one way to correctly setup and use **NightView**. It also offers the possibility to customize the view within the app.
 
 ## Getting Started
-It only takes a few simple steps to install and setup **BEMCheckBox** to your project.
+It only takes a few simple steps to install and setup **NightView** to your project.
 
 ###Installation
 The easiest way to install **NightView** is to use <a href="http://cocoapods.org/" target="_blank">CocoaPods</a>. To do so, simply add the following line to your `Podfile`:
