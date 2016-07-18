@@ -95,7 +95,7 @@ The intensity of the glowing of the stars, from 0 to 1. If set to 0, the stars w
 The duration in seconds at which the stars glow. *Defaults to 2.0.*
 
 ##### `starType`  
-The type of stars to be drawn. *Defaults to `.round`.*  
+The type of stars to be drawn. *Defaults to `.Round`.*  
 <p align="center"><img src="https://s32.postimg.org/5lqa389lh/Night_View_Stars.jpg"/>
 
 ##### `reload()`  
