@@ -1,8 +1,9 @@
 # NightView
 
 [![Build Status](https://travis-ci.org/Boris-Em/NightView.svg?branch=master)](https://travis-ci.org/Boris-Em/NightView)
-[![License](https://img.shields.io/cocoapods/l/BEMCheckBox.svg?style=flat)](http://cocoadocs.org/docsets/NightView)
-[![Platform](https://img.shields.io/cocoapods/p/BEMCheckBox.svg?style=flat)](http://cocoadocs.org/docsets/NightView)
+[![Version](https://img.shields.io/cocoapods/v/NightView.svg?style=flat)](http://cocoadocs.org/docsets/NightView)
+[![License](https://img.shields.io/cocoapods/l/NightView.svg?style=flat)](http://cocoadocs.org/docsets/NightView)
+[![Platform](https://img.shields.io/cocoapods/p/NightView.svg?style=flat)](http://cocoadocs.org/docsets/NightView)
 
 <p align="center"><img src="https://s32.postimg.org/6w9jyums5/Night_View.jpg"/></p>	
 
