@@ -20,12 +20,12 @@ class NightViewTests: XCTestCase {
     }
     
     func testInitWithFrame() {
-        let nightView = NightView(frame: CGRectMake(0.0, 0.0, 500.0, 500.0))
+        let nightView = NightView(frame: CGRect(x: 0.0, y: 0.0, width: 500.0, height: 500.0))
         XCTAssertNotNil(nightView, "A fully initialized NightView instance should be instanciated.")
     }
     
     func testReload() {
-        let nightView = NightView(frame: CGRectMake(0.0, 0.0, 500.0, 500.0))
+        let nightView = NightView(frame: CGRect(x: 0.0, y: 0.0, width: 500.0, height: 500.0))
         nightView.reload()
         let stars = nightView.layer.sublayers?.first?.sublayers
         XCTAssert(stars?.count > 0, "Multiple stars should have been drawn")
@@ -38,7 +38,7 @@ class NightViewTests: XCTestCase {
     }
     
     func testNumberOfPointsForStar() {
-        let nightView = NightView(frame: CGRectMake(0.0, 0.0, 100.0, 100.0))
+        let nightView = NightView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
         nightView.reload()
         var stars = nightView.layer.sublayers?.first?.sublayers
         XCTAssert(stars?.count > 0)
@@ -51,7 +51,7 @@ class NightViewTests: XCTestCase {
     func testStarSize() {
         let starSize: CGFloat = 100.0
         
-        let nightView = NightView(frame: CGRectMake(0.0, 0.0, 50.0, 50.0))
+        let nightView = NightView(frame: CGRect(x: 0.0, y: 0.0, width: 50.0, height: 50.0))
         nightView.numberOfPointsForStar = 1
         nightView.starSize = starSize
         nightView.reload()
@@ -123,7 +123,7 @@ class NightViewTests: XCTestCase {
     }
     
     func testMinStarOpacity() {
-        let nightView = NightView(frame: CGRectMake(0.0, 0.0, 50.0, 50.0))
+        let nightView = NightView(frame: CGRect(x: 0.0, y: 0.0, width: 50.0, height: 50.0))
         nightView.numberOfPointsForStar = 1
         nightView.reload()
         var stars = nightView.layer.sublayers?.first?.sublayers
