@@ -20,9 +20,9 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toCustomization" {
-            if let navVC = segue.destinationViewController as? UINavigationController, let customizationVC = navVC.topViewController as? CustomizationTableViewController {
+            if let navVC = segue.destination as? UINavigationController, let customizationVC = navVC.topViewController as? CustomizationTableViewController {
                 customizationVC.nightView = nightView
             }
         }

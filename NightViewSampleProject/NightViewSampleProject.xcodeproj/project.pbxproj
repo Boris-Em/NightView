@@ -161,9 +161,11 @@
 				TargetAttributes = {
 					C31E42021D333B5C00A4A7A4 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 					C31E42161D333B5C00A4A7A4 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = C31E42021D333B5C00A4A7A4;
 					};
 				};
@@ -351,6 +353,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BEM.NightViewSampleProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -363,6 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BEM.NightViewSampleProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -377,6 +381,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightViewSampleProject.app/NightViewSampleProject";
 			};
 			name = Debug;
@@ -391,6 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BEM.NightViewSampleProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightViewSampleProject.app/NightViewSampleProject";
 			};
 			name = Release;

@@ -32,7 +32,7 @@ public class NightView: UIView {
     
     /** The color of the stars. Defaults to white.
     */
-    @IBInspectable public var starColor = UIColor.whiteColor()
+    @IBInspectable public var starColor = UIColor.white
     
     /** The minimum percent by which the stars' size could be changed. For example, a value of 50.0 means that the minimum size of a star will be 50% of the `starSize` property.
      Defaults to 50.0.
@@ -140,19 +140,19 @@ public class NightView: UIView {
         reload()
     }
     
-    override public func drawRect(rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         starLayer.frame = bounds
         drawStars()
     }
     
     private func drawStars() {
-        removeSublayersFromLayer(starLayer)
+        removeSublayersFromLayer(layer: starLayer)
         
-        let numberOfStars = numberOfStarsForSize(bounds.size)
+        let numberOfStars = numberOfStarsForSize(size: bounds.size)
         for _ in 0..<numberOfStars {
-            let layer = drawStarWithFrame(randomStarFrameInFrame(bounds), boundingFrame: bounds)
+            let layer = drawStarWithFrame(frame: randomStarFrameInFrame(frame: bounds), boundingFrame: bounds)
             if glowingIntensity > 0.0 {
-                addGlowingAnimationToStar(layer)
+                addGlowingAnimationToStar(layer: layer)
             }
         }
     }
@@ -160,9 +160,9 @@ public class NightView: UIView {
     private func drawStarWithFrame(frame: CGRect, boundingFrame: CGRect?) -> CAShapeLayer {
         let layer = CAShapeLayer()
         layer.frame = frame
-        layer.fillColor = starColor.CGColor
-        layer.path = pathForStarWithType(starType, frame: frame).CGPath
-        layer.backgroundColor = UIColor.clearColor().CGColor
+        layer.fillColor = starColor.cgColor
+        layer.path = pathForStarWithType(starType: starType, frame: frame).cgPath
+        layer.backgroundColor = UIColor.clear.cgColor
         
         if let boundingFrame = boundingFrame {
             layer.opacity = max((Float(boundingFrame.height - frame.origin.y) / 100.0) / (Float(boundingFrame.height) / 100.0), minStarOpacity)
@@ -180,21 +180,21 @@ public class NightView: UIView {
         switch starType {
         case .FiveBranchStar:
             let starPath = UIBezierPath()
-            starPath.moveToPoint(CGPoint(x: width / (1000 / 500), y: width / (1000 / 50)))
-            starPath.addLineToPoint(CGPoint(x: width / (1000 / 676.34), y: width / (1000 / 307.29)))
-            starPath.addLineToPoint(CGPoint(x: width / (1000 / 975.53), y: width / (1000 / 395.49)))
-            starPath.addLineToPoint(CGPoint(x: width / (1000 / 785.32), y: width / (1000 / 642.71)))
-            starPath.addLineToPoint(CGPoint(x: width / (1000 / 793.89), y: width / (1000 / 954.51)))
-            starPath.addLineToPoint(CGPoint(x: width / (1000 / 500), y: width / (1000 / 850)))
-            starPath.addLineToPoint(CGPoint(x: width / (1000 / 206.11), y: width / (1000 / 954.51)))
-            starPath.addLineToPoint(CGPoint(x: width / (1000 / 214.68), y: width / (1000 / 642.71)))
-            starPath.addLineToPoint(CGPoint(x: width / (1000 / 24.47), y: width / (1000 / 395.49)))
-            starPath.addLineToPoint(CGPoint(x: width / (1000 / 323.66), y: width / (1000 / 307.29)))
-            starPath.closePath()
+            starPath.move(to: CGPoint(x: width / (1000 / 500), y: width / (1000 / 50)))
+            starPath.addLine(to: CGPoint(x: width / (1000 / 676.34), y: width / (1000 / 307.29)))
+            starPath.addLine(to: CGPoint(x: width / (1000 / 975.53), y: width / (1000 / 395.49)))
+            starPath.addLine(to: CGPoint(x: width / (1000 / 785.32), y: width / (1000 / 642.71)))
+            starPath.addLine(to: CGPoint(x: width / (1000 / 793.89), y: width / (1000 / 954.51)))
+            starPath.addLine(to: CGPoint(x: width / (1000 / 500), y: width / (1000 / 850)))
+            starPath.addLine(to: CGPoint(x: width / (1000 / 206.11), y: width / (1000 / 954.51)))
+            starPath.addLine(to: CGPoint(x: width / (1000 / 214.68), y: width / (1000 / 642.71)))
+            starPath.addLine(to: CGPoint(x: width / (1000 / 24.47), y: width / (1000 / 395.49)))
+            starPath.addLine(to: CGPoint(x: width / (1000 / 323.66), y: width / (1000 / 307.29)))
+            starPath.close()
             return starPath
             
         default:
-            return UIBezierPath(ovalInRect: CGRectMake(0.0, 0.0, frame.width, frame.height))
+            return UIBezierPath(ovalIn: CGRect(x: 0.0, y: 0.0, width: frame.width, height: frame.height))
         }
     }
     
@@ -205,16 +205,16 @@ public class NightView: UIView {
         animation.duration = glowingDuration
         animation.fromValue = layer.opacity
         animation.beginTime = CACurrentMediaTime() + Double(arc4random_uniform(UInt32(glowingDuration) * 1000)) / 1000
-        animation.toValue = NSNumber(float: layer.opacity - layer.opacity * glowingIntensity)
+        animation.toValue = NSNumber(value: layer.opacity - layer.opacity * glowingIntensity)
         animation.autoreverses = true
         animation.repeatCount = .infinity
-        layer.addAnimation(animation, forKey: "opacity")
+        layer.add(animation, forKey: "opacity")
     }
     
     // MARK: Generators
     
     private func randomStarFrameInFrame(frame: CGRect) -> CGRect {
-        let size = randomStarSizeForSize(starSize)
+        let size = randomStarSizeForSize(starSize: starSize)
         
         let minX = frame.origin.x
         let maxX = frame.origin.x + frame.size.width
@@ -224,7 +224,7 @@ public class NightView: UIView {
         let randomX = CGFloat(arc4random_uniform(UInt32(maxX - minX))) + minX
         let randomY = CGFloat(arc4random_uniform(UInt32(maxY - minY))) + minY
         
-        let starFrame = CGRectMake(randomX, randomY, size.width, size.height)
+        let starFrame = CGRect(x: randomX, y: randomY, width: size.width, height: size.height)
         
         return starFrame
     }

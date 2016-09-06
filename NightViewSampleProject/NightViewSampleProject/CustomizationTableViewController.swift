@@ -122,7 +122,7 @@ class CustomizationTableViewController: UITableViewController {
     }
     
     @IBAction func handleTapDoneButton(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func handleStarTypeSegmentedControl(sender: UISegmentedControl) {
