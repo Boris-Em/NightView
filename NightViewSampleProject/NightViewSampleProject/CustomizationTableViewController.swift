@@ -86,46 +86,46 @@ class CustomizationTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func handleSlideNumberOfPointsForStarSlider(sender: UISlider) {
+    @IBAction func handleSlideNumberOfPointsForStarSlider(_ sender: UISlider) {
         nightView?.numberOfPointsForStar = CGFloat(sender.value)
         numberOfPointsForStarLabel.text = String(format: "%.1f", sender.value)
     }
     
-    @IBAction func handleStarSizeSlider(sender: UISlider) {
+    @IBAction func handleStarSizeSlider(_ sender: UISlider) {
         nightView?.starSize = CGFloat(sender.value)
         starSizeLabel.text = String(format: "%.1f", sender.value)
     }
     
-    @IBAction func handleStarSizeMinRandomizerSlider(sender: UISlider) {
+    @IBAction func handleStarSizeMinRandomizerSlider(_ sender: UISlider) {
         nightView?.starSizeMinRandomizer = Double(sender.value)
         starSizeMinRandomizerLabel.text = String(format: "%.1f", sender.value)
     }
     
-    @IBAction func handleStarSizeMaxRandomizerSlider(sender: UISlider) {
+    @IBAction func handleStarSizeMaxRandomizerSlider(_ sender: UISlider) {
         nightView?.starSizeMaxRandomizer = Double(sender.value)
         starSizeMaxRandomizerLabel.text = String(format: "%.1f", sender.value)
     }
     
-    @IBAction func handleMinStarOpacitySlider(sender: UISlider) {
+    @IBAction func handleMinStarOpacitySlider(_ sender: UISlider) {
         nightView?.minStarOpacity = sender.value
         minStarOpacityLabel.text = String(format: "%.1f", sender.value)
     }
     
-    @IBAction func handleGlowingIntensitySlider(sender: UISlider) {
+    @IBAction func handleGlowingIntensitySlider(_ sender: UISlider) {
         nightView?.glowingIntensity = sender.value
         glowingIntensityLabel.text = String(format: "%.1f", sender.value)
     }
     
-    @IBAction func handleGlowingDurationSlider(sender: UISlider) {
+    @IBAction func handleGlowingDurationSlider(_ sender: UISlider) {
         nightView?.glowingDuration = Double(sender.value)
         glowingDurationLabel.text = String(format: "%.1f", sender.value)
     }
     
-    @IBAction func handleTapDoneButton(sender: AnyObject) {
+    @IBAction func handleTapDoneButton(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func handleStarTypeSegmentedControl(sender: UISegmentedControl) {
+    @IBAction func handleStarTypeSegmentedControl(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
             nightView?.starType = .Round
