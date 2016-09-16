@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode7.3
+osx_image: xcode8.0
 
 script:
 - xcodebuild clean build test -project "NightViewSampleProject/NightViewSampleProject.xcodeproj" -scheme NightViewSampleProject -sdk iphonesimulator9.3 -destination "OS=9.3,name=iPhone 5S" ONLY_ACTIVE_ARCH=NO
