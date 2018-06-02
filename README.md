@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/NightView.svg?style=flat)](http://cocoadocs.org/docsets/NightView)
 [![Platform](https://img.shields.io/cocoapods/p/NightView.svg?style=flat)](http://cocoadocs.org/docsets/NightView)
 
-<p align="center"><img src="https://s32.postimg.org/6w9jyums5/Night_View.jpg"/></p>	
+<p align="center"><img src="./.assets/NightView_Banner.jpg"/></p>	
 
 **NightView** is an open source library that generates beautiful, random, starry skies on iOS.  
 
@@ -25,7 +25,7 @@
   ## Project Details
 Learn more about the **NightView** project, licensing, support etc.
 
-<p align="center"><img src="https://s31.postimg.org/tn5o1yikb/Night_View_i_Phone.jpg"/></p>
+<p align="center"><img src="./.assets/NightView_iPhone.jpg"/></p>
 
 ### Requirements
  - Requires iOS 7 or later. The sample project is optimized for iOS 9.
@@ -97,7 +97,7 @@ The duration in seconds at which the stars glow. *Defaults to 2.0.*
 
 ##### `starType`  
 The type of stars to be drawn. *Defaults to `.Round`.*  
-<p align="center"><img src="https://s32.postimg.org/5lqa389lh/Night_View_Stars.jpg"/>
+<p align="center"><img src="./.assets/NightView_Stars.jpg"/>
 
 ##### `reload()`  
 Reloads the **NightView** instance, redrawing all of the stars.
